@@ -16,15 +16,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
       </head>
-      <body style={{ display: 'flex', flexDirection: 'column', height: '100vh', overflow: 'hidden' }}>
+      <body style={{ display:'flex', flexDirection:'column', height:'100vh', overflow:'hidden' }}>
         <Topbar />
-        <div style={{ display: 'flex', flex: 1, overflow: 'hidden' }}>
+        <div style={{ display:'flex', flex:1, overflow:'hidden' }}>
           <Sidebar />
-          <main style={{
-            flex: 1, overflowY: 'auto', overflowX: 'hidden',
-            padding: '1.1rem',
-            scrollbarWidth: 'thin',
-          }}>
+          <main style={{ flex:1, overflowY:'auto', overflowX:'hidden', padding:'1.1rem', scrollbarWidth:'thin' }}>
             {children}
           </main>
         </div>

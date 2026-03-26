@@ -1,12 +1,8 @@
 {
   "name": "sie2028",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
-  },
+  "scripts": { "dev": "next dev", "build": "next build", "start": "next start" },
   "dependencies": {
     "next": "14.2.29",
     "react": "^18",
