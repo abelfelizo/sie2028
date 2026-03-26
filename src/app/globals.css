@@ -1,13 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root {
-  --bg0:#08090d;--bg1:#0e1018;--bg2:#141720;--bg3:#1c2030;--bg4:#242840;
-  --border:#252a3a;--border2:#2f3550;--text:#dde1f0;--muted:#5a6185;--muted2:#7a85b0;
-  --fp:#e8294a;--prm:#1a6ae0;--pld:#7c3aed;--amber:#f59e0b;--green:#10b981;--red:#ef4444;
-}
-*{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'IBM Plex Sans',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg0);color:var(--text);height:100vh;overflow:hidden;}
-::-webkit-scrollbar{width:4px;height:4px;}
-::-webkit-scrollbar-track{background:transparent;}
-::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px;}
+:root{--bg0:#08090d;--bg1:#0e1018;--bg2:#141720;--bg3:#1c2030;--bg4:#242840;--border:#252a3a;--border2:#2f3550;--text:#dde1f0;--muted:#5a6185;--muted2:#7a85b0;--fp:#e8294a;--prm:#1a6ae0;--pld:#7c3aed;--amber:#f59e0b;--green:#10b981;--red:#ef4444}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'IBM Plex Sans',-apple-system,sans-serif;background:var(--bg0);color:var(--text);height:100vh;overflow:hidden}
+::-webkit-scrollbar{width:4px;height:4px}::-webkit-scrollbar-track{background:transparent}::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}

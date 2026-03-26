@@ -1,38 +1,5 @@
-import React from 'react';
-
-export function KpiCard({ label, value, sub, color }: { label:string; value:string; sub:string; color:string }) {
-  return (
-    <div style={{ background:'#141720', border:'1px solid #252a3a', borderRadius:'6px', padding:'.65rem .75rem', position:'relative', overflow:'hidden' }}>
-      <div style={{ position:'absolute', top:0, left:0, right:0, height:'2px', background:color }} />
-      <div style={{ fontFamily:'monospace', fontSize:'.56rem', textTransform:'uppercase', letterSpacing:'.1em', color:'#5a6185', marginBottom:'.3rem' }}>{label}</div>
-      <div style={{ fontFamily:'monospace', fontSize:'1.25rem', fontWeight:600, color, lineHeight:1 }}>{value}</div>
-      <div style={{ fontSize:'.62rem', color:'#5a6185', marginTop:'.18rem' }}>{sub}</div>
-    </div>
-  );
-}
-
-export function Bar({ pct, color, label, val }: { pct:number; color:string; label:string; val:string }) {
-  return (
-    <div style={{ marginBottom:'.55rem' }}>
-      <div style={{ display:'flex', justifyContent:'space-between', marginBottom:'.18rem' }}>
-        <span style={{ fontSize:'.73rem', fontWeight:500, color }}>{label}</span>
-        <span style={{ fontFamily:'monospace', fontSize:'.7rem', color:'#7a85b0' }}>{val}</span>
-      </div>
-      <div style={{ height:'5px', background:'#242840', borderRadius:'99px', overflow:'hidden' }}>
-        <div style={{ height:'100%', width:`${Math.min(pct,100)}%`, background:color, borderRadius:'99px' }} />
-      </div>
-    </div>
-  );
-}
-
-export function BloqueBadge({ bloque }: { bloque:string }) {
-  const colors: Record<string,{bg:string,color:string,border:string}> = {
-    PRM:{ bg:'#1a6ae018', color:'#1a6ae0', border:'1px solid #1a6ae030' },
-    FP:{ bg:'#e8294a18', color:'#e8294a', border:'1px solid #e8294a30' },
-    PLD:{ bg:'#7c3aed18', color:'#7c3aed', border:'1px solid #7c3aed30' },
-  };
-  const s = colors[bloque] || { bg:'#5a618518', color:'#5a6185', border:'1px solid #5a618530' };
-  return (
-    <span style={{ fontFamily:'monospace', fontSize:'.6rem', fontWeight:600, padding:'.08rem .35rem', borderRadius:'3px', background:s.bg, color:s.color, border:s.border }}>{bloque}</span>
-  );
-}
+export function KpiCard({label,value,sub,color}:{label:string;value:string;sub:string;color:string}){return(<div style={{background:'#141720',border:'1px solid #252a3a',borderRadius:'6px',padding:'.65rem .75rem',position:'relative',overflow:'hidden'}}><div style={{position:'absolute',top:0,left:0,right:0,height:'2px',background:color}}/><div style={{fontFamily:'monospace',fontSize:'.56rem',textTransform:'uppercase',letterSpacing:'.1em',color:'#5a6185',marginBottom:'.3rem'}}>{label}</div><div style={{fontFamily:'monospace',fontSize:'1.25rem',fontWeight:600,color,lineHeight:1}}>{value}</div><div style={{fontSize:'.62rem',color:'#5a6185',marginTop:'.18rem'}}>{sub}</div></div>);}
+export function Bar({pct,color,label,val}:{pct:number;color:string;label:string;val:string}){return(<div style={{marginBottom:'.55rem'}}><div style={{display:'flex',justifyContent:'space-between',marginBottom:'.18rem'}}><span style={{fontSize:'.73rem',fontWeight:500,color}}>{label}</span><span style={{fontFamily:'monospace',fontSize:'.7rem',color:'#7a85b0'}}>{val}</span></div><div style={{height:'5px',background:'#242840',borderRadius:'99px',overflow:'hidden'}}><div style={{height:'100%',width:`${Math.min(pct,100)}%`,background:color,borderRadius:'99px'}}/></div></div>);}
+export function Badge({bloque}:{bloque:string}){const m:Record<string,{bg:string,c:string,b:string}>={PRM:{bg:'#1a6ae018',c:'#1a6ae0',b:'1px solid #1a6ae030'},FP:{bg:'#e8294a18',c:'#e8294a',b:'1px solid #e8294a30'},PLD:{bg:'#7c3aed18',c:'#7c3aed',b:'1px solid #7c3aed30'}};const s=m[bloque]??{bg:'#5a618518',c:'#5a6185',b:'1px solid #5a618530'};return <span style={{fontFamily:'monospace',fontSize:'.6rem',fontWeight:600,padding:'.08rem .35rem',borderRadius:'3px',background:s.bg,color:s.c,border:s.b}}>{bloque}</span>;}
+export function RiesgoBadge({r}:{r:string}){const m:Record<string,string>={'FORTÍN — proteger':'#10b981','CRÍTICO — < 5pp':'#e8294a','DISPUTADO — 5-15pp':'#f59e0b','DIFÍCIL — 15-25pp':'#1a6ae0','ADVERSO — > 25pp':'#5a6185'};const c=m[r]??'#5a6185';return <span style={{fontFamily:'monospace',fontSize:'.58rem',fontWeight:700,padding:'.08rem .4rem',borderRadius:'3px',background:c+'22',color:c,border:`1px solid ${c}40`}}>{r}</span>;}
+export function ClasificacionBadge({c}:{c:string}){const m:Record<string,{bg:string,color:string}>={GANAR:{bg:'#10b981',color:'#fff'},OFENSIVO:{bg:'#f59e0b',color:'#000'},COMPETITIVO:{bg:'#1a6ae0',color:'#fff'},DEFENSIVO:{bg:'#5a6185',color:'#fff'}};const s=m[c]??{bg:'#252a3a',color:'#dde1f0'};return <span style={{fontFamily:'monospace',fontSize:'.58rem',fontWeight:700,padding:'.08rem .4rem',borderRadius:'3px',background:s.bg,color:s.color}}>{c}</span>;}
